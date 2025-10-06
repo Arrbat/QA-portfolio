@@ -1,0 +1,30 @@
+{
+  "name": "qa-portfolio",
+  "version": "1.0.0",
+  "description": "Repository presents simple TODO application, but the main goal is to present QA testing skills by showing documenting/reporting/manual&amp;automated testing skills",
+  "main": "index.js",
+  "directories": {
+    "doc": "docs",
+    "test": "tests"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Arrbat/QA-portfolio.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Arrbat/QA-portfolio/issues"
+  },
+  "homepage": "https://github.com/Arrbat/QA-portfolio#readme",
+  "dependencies": {
+    "body-parser": "^2.2.0",
+    "cors": "^2.8.5",
+    "express": "^5.1.0",
+    "mysql2": "^3.15.1"
+  }
+}
