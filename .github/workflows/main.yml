@@ -1,0 +1,33 @@
+name: TODO-app Pipeline
+
+on:
+  push:
+    branches:
+    - main
+  pull_request:
+
+jobs:
+  lint-docs:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Lint Markdown
+        uses: avto-dev/markdown-lint@v1
+
+  run-tests:
+    runs-on: ubuntu-latest
+    needs: lint-docs
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Run Jest tests
+        run: npm test
