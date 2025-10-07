@@ -1,1 +1,6 @@
+# Testing server
 testserver.js
+
+# Visual Studio Code extensions/project settings. Not needed in repository.
+.vscode
+

@@ -2,9 +2,9 @@
 
 Just TODO application with login/registration form and unique task-panel for each user. HTML+CSS+Javascript (React+Node.js)
 
-Main goal is to show both manual and automation QA skills. See docs for reports and tests directory for automated tests. 
+Main goal is to show both manual and automation QA skills. See docs for reports and tests directory for automated tests.
 
-*Project is still under development*
+_Project is still under development_
 
 # Navigation
 
@@ -12,7 +12,7 @@ Will be added soon
 
 # Setup
 
-- Node.js v22.20.0 (x64) needs to be configured. `src/server/server.js` needs proper credentials. 
+- Node.js v22.20.0 (x64) needs to be configured. `server/server.js` needs proper credentials. Also, everything is designed to working on only localhost.
 
 - MySQL (pre-built v8.0 for Windows) needs to be installed. Following SQL query was used for creating DB and users+tasks table:
 
@@ -22,9 +22,9 @@ CREATE SCHEMA IF NOT EXISTS `users_db`;
 USE `users_db`;
 
 CREATE TABLE `users` (
-    `id` INT AUTO_INCREMENT PRIMARY KEY, 
-    `user_login` NVARCHAR(100) NOT NULL, 
-    `user_password` NVARCHAR(100) NOT NULL 
+    `id` INT AUTO_INCREMENT PRIMARY KEY,
+    `user_login` NVARCHAR(100) NOT NULL,
+    `user_password` NVARCHAR(100) NOT NULL
 );
 ```
 
@@ -43,16 +43,17 @@ CREATE TABLE `tasks` (
 
 ---
 
-After setup, run server: 
+After setup, run server:
 
 ```powershell
-node src/server/server.js
+node server/server.js
 ```
 
 and run frontend
 
 ```powershell
-cd src/frontend/react-sql-frontend/
+cd client
 
 npm start
 ```
+
