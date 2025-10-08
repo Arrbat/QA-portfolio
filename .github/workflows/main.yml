@@ -8,28 +8,28 @@ on:
 
 jobs:
   lint-docs:
-    runs-on: ubuntu-latest
+    runs-on: windows-latest
     steps:
       - uses: actions/checkout@v4
       - name: Lint Markdown
         uses: avto-dev/markdown-lint@v1
 
   run-tests:
-    runs-on: ubuntu-latest
+    runs-on: windows-latest
     needs: lint-docs
     steps:
-      - name: Checkout repository
-        uses: actions/checkout@v4
+      - uses: actions/checkout@v4
   
       - name: Set up Node.js
         uses: actions/setup-node@v4
         with:
           node-version: '22'
   
-      - name: Install test dependencies
+      - name: Install dependencies
         working-directory: tests
         run: npm install
   
       - name: Run Jest tests
         working-directory: tests
         run: npx jest --watchAll=false
+
