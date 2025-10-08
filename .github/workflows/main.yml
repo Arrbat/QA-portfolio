@@ -1,9 +1,9 @@
-name: TODO-app Pipeline
+name: Testing Pipeline
 
 on:
   push:
     branches:
-    - main
+      - main
   pull_request:
 
 jobs:
@@ -26,8 +26,10 @@ jobs:
         with:
           node-version: '22'
 
-      - name: Install dependencies
+      - name: Install test dependencies
+        working-directory: tests
         run: npm install
 
       - name: Run Jest tests
-        run: npm test
+        working-directory: tests
+        run: npx jest

@@ -1,7 +1,5 @@
 # Login/Registration Page – Visual Layout and Interactivity
 
----
-
 ## UI (User Interface)
 
 **Objective:** Validate visibility and animation of main UI components on the login/registration page.
@@ -37,7 +35,7 @@
 ### Steps
 
 1. Click the “Login” and “Register” buttons multiple times.  
-2. Enter valid English credentials into the username and password fields.
+2. Enter valid credentials (a-z) into the username and password fields.
 
 ### Expected Results
 

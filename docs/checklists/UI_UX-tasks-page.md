@@ -35,7 +35,7 @@
 
 ### Steps
 
-1. Create three tasks using English titles.  
+1. Create three tasks using titles in a-z, 0-9 format (F.e. "Check133").  
 2. Enter a description for each task.  
 3. Click the **Delete** button on one task.  
 4. Click the **Mark Complete** and **Mark Incomplete** buttons for several tasks.  

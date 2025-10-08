@@ -1,14 +1,40 @@
 # TL;DR
 
-Just TODO application with login/registration form and unique task-panel for each user. HTML+CSS+Javascript (React+Node.js)
+This is a simple **TODO application** built with **JavaScript, React, and Node.js**, using **Express** for backend and **Axios** for client–server communication.
 
-Main goal is to show both manual and automation QA skills. See docs for reports and tests directory for automated tests.
+It includes a **Login / Registration page** with a user database and a personalized **Task Panel**.
+
+> **Project goal:** to demonstrate skills in software testing, QA process design, and basic full-stack web development.
+
+---
+
+##### Total number of automated tests: `1`
+
+##### Total number of manual tests: `3`
+
+##### Total number of checklists: `2`
+
+##### Total number of bug-reports: -
+
+##### Total number of test-cases: `3` + `1 automated test-case`
 
 _Project is still under development_
 
 # Navigation
 
-Will be added soon
+`tests/` contains automated tests and required dependencies for them (such as mock-server).
+
+`server` and `client` contain source code and dependencies for application.
+
+`.github/workflows` contain **CI/CD** pipelines such as automated tests integration.
+
+`docs` contain documentaion such as bug-reports, checklists, test-cases, test reports, test plan.
+
+# Tests and dependencies
+
+Run `npx jest` from any project's directory to run all automated tests .
+
+Automated tests use SQLite server as imitation of real MySQL server.
 
 # Setup
 
@@ -56,3 +82,4 @@ cd client
 
 npm start
 ```
+
