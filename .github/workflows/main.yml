@@ -26,10 +26,10 @@ jobs:
         with:
           node-version: '22'
 
-      - name: Install dependencies
-        working-directory: client
+      - name: Install test dependencies
+        working-directory: tests
         run: npm install
 
       - name: Run Jest tests
-        working-directory: client
-        run: npx jest ../tests --watchAll=false
+        working-directory: tests
+        run: npx jest
