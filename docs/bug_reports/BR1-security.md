@@ -1,10 +1,10 @@
-### Unauthorized Deletion of Another User's Task (IDOR/BOLA)
+## Unauthorized Deletion of Another User's Task (IDOR/BOLA)
 
 **ID:** BR1-security
 
 **Summary:** Unauthorized deletion of another user's task via API DELETE request.
 
-**Description:**
+### **Description:**
 
 Actual result: When sending a DELETE request to `http://localhost:3001/tasks/x` for a task owned by another user, the server either deletes the task or responds incorrectly, violating access control.
 
@@ -26,7 +26,7 @@ Requirement: The system must enforce object-level access control, preventing use
 
 **Comments:** This is an Insecure Direct Object Reference (IDOR/BOLA) vulnerability. Ensure that ownership checks are implemented before any delete operation.
 
-#### Steps to Reproduce
+### Steps to Reproduce
 
 1) Authenticate as `User A` (obtain valid login, password).
 
@@ -42,7 +42,9 @@ Requirement: The system must enforce object-level access control, preventing use
 
 5) Optional check: Send DELETE request to a task owned by `User A` and ensure it succeeds (200 OK).
 
-##### Attachments
+---
+
+#### Attachments
 
 Valid cmd command for executing `step 3` that may be used:
 
