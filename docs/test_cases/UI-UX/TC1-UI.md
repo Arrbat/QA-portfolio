@@ -1,5 +1,7 @@
 ### Test Case: UI visibility validation of pages
 
+---
+
 **ID:** TC1-UI
 
 **Section:** UI module, Visual integrity  
@@ -30,4 +32,4 @@
 | 2 | Check visibility of all UI elements. | All interactive elements (buttons, input fields) are displayed and not overlapped. |
 | 3 | Resize browser window or use zoom (90–125%). | UI elements remain visible and properly aligned (no overlapping or disappearance). |
 
-**Status:** Pending
+**Status:** Passed

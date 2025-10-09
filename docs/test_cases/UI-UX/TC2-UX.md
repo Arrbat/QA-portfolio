@@ -1,5 +1,7 @@
 ### Test Case: UX responsiveness of Tasks page
 
+---
+
 **ID:** TC2-UX  
 
 **Section:** User Experience (UX)  
@@ -33,4 +35,4 @@
 | 5 | Modify the title field of one task in the same way. | Entered text appears correctly and is displayed within the field boundaries. |
 | 6 | Create a new task by entering 5 alphabetic characters (a–z) in the “Title” field and clicking the “Create” button. | A new task appears in the list with the correct title and an empty description. |
 
-**Status:** Pending
+**Status:** Passed

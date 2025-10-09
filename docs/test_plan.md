@@ -167,14 +167,14 @@ None
 
 ## Test schedule
 
-Majority of tests must be described, executed, documented as soon as possible.
+- Majority of tests must be described, executed, documented as soon as possible.
 
 Deadline: 2 weeks from the test plan publication
 
 *Possible schedule:*
 
-3-4 days for Manual Testing and bug reporting
+- 3-4 days for Manual Testing and bug reporting
 
-5 days for Automated tests (frontend, backend)
+- 5 days for Automated tests (frontend, backend)
 
-5 days for CI/CD configuration, final documentation and test reporting
+- 5 days for CI/CD configuration, final documentation and test reporting

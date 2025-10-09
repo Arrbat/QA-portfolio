@@ -1,5 +1,7 @@
 ### Test Case: UX responsiveness of Login/Registration page
 
+---
+
 **ID:** TC1-UX  
 
 **Section:** User Experience (UX)  
@@ -28,4 +30,4 @@
 | 2 | Enter 5 alphabetic characters (a–z) in the username field. | Typed text appears correctly in the input field, without delay or missing symbols. |
 | 3 | Enter 5 alphabetic characters and 3 digits in the password field. | Each character is replaced with a bullet (`●`) immediately after typing. |
 
-**Status:** Pending
+**Status:** Passed

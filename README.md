@@ -10,13 +10,13 @@ It includes a **Login / Registration page** with a user database and a personali
 
 ##### Total number of automated tests: `1`
 
-##### Total number of manual tests: `3`
+##### Total number of manual tests: `4`
 
 ##### Total number of checklists: `2`
 
-##### Total number of bug-reports: -
+##### Total number of bug-reports: `1`
 
-##### Total number of test-cases: `3` + `1 automated test-case`
+##### Total number of test-cases: `4` + `1 automated test-case`
 
 _Project is still under development_
 
