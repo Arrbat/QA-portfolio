@@ -6,7 +6,7 @@
 
 **Section:** server, security
 
-**Type:** Manual, Automated
+**Type:** Manual
 
 **Priority:** Very High (5/5)
 

@@ -12,12 +12,6 @@
 
 **Estimate:** 10 min  
 
-**References:**  
-
-- [Checklist for login page](https://github.com/Arrbat/QA-portfolio/blob/main/docs/checklists/UI_UX-login-page.md)  
-
-- [Checklist for tasks page](https://github.com/Arrbat/QA-portfolio/blob/main/docs/checklists/UI_UX-tasks-page.md)  
-
 #### Preconditions
 
 - Application and backend server are running.  

@@ -95,7 +95,7 @@ Coverage: percentage of functional features covered by tests.
 
 - End-to-end tests using Playwright.
 
-**Testing types:** Functional, Negative, Regression.
+**Main Testing types:** Functional, Positive/Negative, Regression, API
 
 **Tools:** Node.js, MySQL, Postman/Insomnia, Jest, React Testing Library, Playwright, Markdown for documentation.
 
