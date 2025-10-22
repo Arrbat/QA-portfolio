@@ -6,44 +6,13 @@ on:
     branches: [ main, master ]
 jobs:
   test:
-    timeout-minutes: 60
     runs-on: ubuntu-latest
-    services:
-      mysql:
-        image: mysql:8.0
-        env:
-          MYSQL_ROOT_PASSWORD: root
-          MYSQL_DATABASE: users_db
-        ports:
-          - 3306:3306
-        options: >-
-          --health-cmd="mysqladmin ping --silent"
-          --health-interval=10s
-          --health-timeout=5s
-          --health-retries=10
-
     steps:
     - uses: actions/checkout@v4
 
     - uses: actions/setup-node@v4
       with:
         node-version: 22
-
-    # Wait for MySQL to be ready
-    - name: Wait for MySQL
-      run: |
-        for i in {1..30}; do
-          mysql -h 127.0.0.1 -P 3306 -u root -proot -e "SELECT 1" && exit 0
-          sleep 2
-        done
-        echo "MySQL did not start in time" && exit 1
-      shell: bash
-
-    # Set up database schema
-    - name: Create MySQL schema and tables
-      run: |
-        mysql -h 127.0.0.1 -P 3306 -u root -proot < server/schema.sql
-      shell: bash
 
     # Install frontend dependencies and start frontend server
     - name: Install frontend dependencies
@@ -54,26 +23,16 @@ jobs:
       run: nohup npm start &
       working-directory: client
 
-    # Install backend dependencies and start backend server
-    - name: Install backend dependencies
+    # Install Jest dependencies and start mock server (Yes, for Playwright - Jest is needed)
+    - name: Install Jest dependencies
       run: npm ci
-      working-directory: server
+      working-directory: tests/jest
 
-    - name: Start backend server
-      run: nohup node server.js &
-      working-directory: server
+    - name: Start mock API server
+      run: nohup node mock_server_register-endp.js &
+      working-directory: tests/jest
 
-    # Wait for backend to be ready (port 3001)
-    - name: Wait for backend to be ready
-      run: |
-        for i in {1..30}; do
-          nc -z localhost 3001 && echo "Backend is up!" && exit 0
-          sleep 1
-        done
-        echo "Backend did not start in time" && exit 1
-      shell: bash
-
-    # Wait for frontend to be ready (port 3000)
+    # Wait for frontend to be ready
     - name: Wait for frontend to be ready
       run: |
         for i in {1..30}; do
@@ -81,6 +40,16 @@ jobs:
           sleep 1
         done
         echo "Frontend did not start in time" && exit 1
+      shell: bash
+
+    # Wait for mock API to be ready 
+    - name: Wait for mock API to be ready
+      run: |
+        for i in {1..30}; do
+          nc -z localhost 3001 && echo "Mock API is up!" && exit 0
+          sleep 1
+        done
+        echo "Mock API did not start in time" && exit 1
       shell: bash
 
     # Install Playwright dependencies and browsers
