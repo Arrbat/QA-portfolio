@@ -28,10 +28,10 @@ jobs:
           node-version: '22'
   
       - name: Install dependencies
-        working-directory: tests
+        working-directory: tests/jest
         run: npm install
   
       - name: Run Jest tests
-        working-directory: tests
+        working-directory: tests/jest
         run: npx jest --watchAll=false
 
