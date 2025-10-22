@@ -1,22 +1,19 @@
 import { test, expect } from '@playwright/test';
 
-test('Register new user', async ({ page }) => {
-    await page.goto('http://localhost:3000');
-
-    await page.fill('input[placeholder="Login"]', 'TESTUSER');
-    await page.fill('input[placeholder="Password"]', 'TESTPASSWORD');
-
-    await page.click('button:has-text("Register")');
-    await expect(page).toHaveURL(/.*\/tasks/);
+test('Register new user redirects to tasks', async ({ page }) => {
+  await page.goto('http://localhost:3000');
+  await page.fill('input[placeholder="Login"]', 'TESTUSER');
+  await page.fill('input[placeholder="Password"]', 'TESTPASSWORD');
+  await page.click('button:has-text("Register")');
+  await expect(page).toHaveURL(/.*\/tasks/);
 });
 
-test('Login already created user', async ({page}) => {
-    await page.goto('http://localhost:3000');
-    await page.fill('input[placeholder="Login"]', 'TESTUSER');
-    await page.fill('input[placeholder="Password"]', 'TESTPASSWORD');
-
-    await page.click('button:has-text("Login")');
-    await expect(page).toHaveURL(/.*\/tasks/);
+test('Login with existing user redirects to tasks', async ({ page }) => {
+  await page.goto('http://localhost:3000');
+  await page.fill('input[placeholder="Login"]', 'TESTUSER');
+  await page.fill('input[placeholder="Password"]', 'TESTPASSWORD');
+  await page.click('button:has-text("Login")');
+  await expect(page).toHaveURL(/.*\/tasks/);
 });
 
 test('Login non-existing user', async ({page}) => {
