@@ -1,4 +1,4 @@
-name: Playwright Tests
+name: Playwright Tests (with Mock API)
 on:
   push:
     branches: [ main, master ]
@@ -14,7 +14,6 @@ jobs:
       with:
         node-version: 22
 
-    # Install frontend dependencies and start frontend server
     - name: Install frontend dependencies
       run: npm ci
       working-directory: client
@@ -23,16 +22,14 @@ jobs:
       run: nohup npm start &
       working-directory: client
 
-    # Install Jest dependencies and start mock server (Yes, for Playwright - Jest is needed)
     - name: Install Jest dependencies
       run: npm ci
       working-directory: tests/jest
 
     - name: Start mock API server
-      run: nohup node mock_server_register-endp.js &
+      run: nohup node start-mock-server.js &
       working-directory: tests/jest
 
-    # Wait for frontend to be ready
     - name: Wait for frontend to be ready
       run: |
         for i in {1..30}; do
@@ -42,7 +39,6 @@ jobs:
         echo "Frontend did not start in time" && exit 1
       shell: bash
 
-    # Wait for mock API to be ready 
     - name: Wait for mock API to be ready
       run: |
         for i in {1..30}; do
@@ -52,7 +48,6 @@ jobs:
         echo "Mock API did not start in time" && exit 1
       shell: bash
 
-    # Install Playwright dependencies and browsers
     - name: Install Playwright dependencies
       run: npm ci
       working-directory: tests/playwright
@@ -61,12 +56,10 @@ jobs:
       run: npx playwright install --with-deps
       working-directory: tests/playwright
 
-    # Run Playwright tests
     - name: Run Playwright tests
       run: npx playwright test
       working-directory: tests/playwright
 
-    # Upload Playwright HTML report
     - uses: actions/upload-artifact@v4
       if: ${{ !cancelled() }}
       with:
