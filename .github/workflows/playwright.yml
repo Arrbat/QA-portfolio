@@ -13,21 +13,21 @@ jobs:
     - uses: actions/setup-node@v4
       with:
         node-version: 22
-        
+
     - name: Install frontend dependencies
       run: npm ci
       working-directory: client
     - name: Start frontend server
       run: nohup npm start &
       working-directory: client
-      
+
     - name: Install backend dependencies
       run: npm ci
       working-directory: server
     - name: Start backend server
       run: nohup node server.js &
       working-directory: server
-      
+
     - name: Install Playwright dependencies
       run: npm ci
       working-directory: tests/playwright
