@@ -8,21 +8,19 @@ It includes a **Login / Registration page** with a user database and a personali
 
 ---
 
-##### Total number of automated tests: `1`
+##### Total number of automated tests: `7`
 
-##### Total number of manual tests: `4`
+##### Total number of manual tests: `6`
 
-##### Total number of checklists: `2`
+##### Total number of checklists: `3`
 
 ##### Total number of bug-reports: `1`
-
-##### Total number of test-cases: `4` + `1 automated test-case`
 
 _Project is still under development_
 
 # Navigation
 
-`tests/` contains automated tests and required dependencies for them (such as mock-server).
+`tests/` contains automated tests and required dependencies for them.
 
 `server` and `client` contain source code and dependencies for application.
 
@@ -42,6 +40,7 @@ Run `npx playwright test` from `tests/playwright` directory to run Playwright te
 
 Use `npx playwright show-report` from `tests/playwright` directory for opening HTML report
 
+>Ensure client and server is running before starting playwright tests
 
 # Setup
 
@@ -76,13 +75,13 @@ CREATE TABLE `tasks` (
 
 ---
 
-After setup, run server:
+To run server:
 
 ```powershell
 node server/server.js
 ```
 
-and run frontend
+To run client:
 
 ```powershell
 cd client
