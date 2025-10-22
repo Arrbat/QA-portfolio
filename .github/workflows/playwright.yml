@@ -14,39 +14,17 @@ jobs:
       with:
         node-version: 22
 
+
+    - name: Install global wait-on
+      run: npm install -g wait-on
+
     - name: Install frontend dependencies
       run: npm ci
-      working-directory: client
-
-    - name: Start frontend server
-      run: nohup npm start &
       working-directory: client
 
     - name: Install Jest dependencies
       run: npm ci
       working-directory: tests/jest
-
-    - name: Start mock API server
-      run: nohup node start-mock-server.js &
-      working-directory: tests/jest
-
-    - name: Wait for frontend to be ready
-      run: |
-        for i in {1..30}; do
-          nc -z localhost 3000 && echo "Frontend is up!" && exit 0
-          sleep 1
-        done
-        echo "Frontend did not start in time" && exit 1
-      shell: bash
-
-    - name: Wait for mock API to be ready
-      run: |
-        for i in {1..30}; do
-          nc -z localhost 3001 && echo "Mock API is up!" && exit 0
-          sleep 1
-        done
-        echo "Mock API did not start in time" && exit 1
-      shell: bash
 
     - name: Install Playwright dependencies
       run: npm ci
@@ -55,6 +33,17 @@ jobs:
     - name: Install Playwright Browsers
       run: npx playwright install --with-deps
       working-directory: tests/playwright
+
+    - name: Start frontend server
+      run: npm start &
+      working-directory: client
+
+    - name: Start mock API server
+      run: node start-mock-server.js &
+      working-directory: tests/jest
+
+    - name: Wait for servers to be ready
+      run: wait-on http://localhost:3000 http://localhost:3001
 
     - name: Run Playwright tests
       run: npx playwright test
