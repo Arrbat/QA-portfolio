@@ -4,3 +4,6 @@ testserver.js
 # Visual Studio Code extensions/project settings. Not needed in remote repository.
 .vscode
 
+# Playwright
+/playwright/.cache/
+/playwright/.auth/

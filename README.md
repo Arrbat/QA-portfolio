@@ -26,15 +26,22 @@ _Project is still under development_
 
 `server` and `client` contain source code and dependencies for application.
 
-`.github/workflows` contain **CI/CD** pipelines such as automated tests integration.
+`.github/workflows` contain **CI/CD** pipelines such as automated tests integration (Jest+Playwright).
 
 `docs` contain documentaion such as bug-reports, checklists, test-cases, test reports, test plan.
 
 # Tests and dependencies
 
-Run `npx jest` from any project's directory to run all automated tests .
+Run `npx jest` from any project's directory to run all Jest tests.
 
-Automated tests use SQLite server as imitation of real MySQL server.
+Jest tests use SQLite server as imitation of real MySQL server.
+
+---
+
+Run `npx playwright test` from `tests/playwright` directory to run Playwright tests
+
+Use `npx playwright show-report` from `tests/playwright` directory for opening HTML report
+
 
 # Setup
 

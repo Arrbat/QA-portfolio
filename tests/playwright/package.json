@@ -1,0 +1,26 @@
+{
+  "name": "qa-portfolio",
+  "version": "1.0.0",
+  "description": "This is a simple **TODO application** built with **JavaScript, React, and Node.js**, using **Express** for backend and **Axios** for client–server communication.",
+  "main": "index.js",
+  "directories": {
+    "doc": "docs",
+    "test": "tests"
+  },
+  "scripts": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Arrbat/QA-portfolio.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Arrbat/QA-portfolio/issues"
+  },
+  "homepage": "https://github.com/Arrbat/QA-portfolio#readme",
+  "devDependencies": {
+    "@playwright/test": "^1.56.1",
+    "@types/node": "^24.9.1"
+  }
+}
